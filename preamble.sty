@@ -1,0 +1,120 @@
+\usepackage[a4paper,
+            left=3cm,
+            right=1.5cm,
+            top=2cm,
+            bottom=2cm,
+            includehead,includefoot,headheight=0pt,%showframe,
+            nohead, nofoot, nomarginpar, 
+            ]{geometry}
+\linespread{1.5}
+\usepackage{silence}
+\WarningsOff[fancyhdr]
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[english, russian]{babel}
+\usepackage{amsmath,mathtools,amssymb}
+\fontsize{14}{17.3}\selectfont
+\usepackage[table,dvipsnames]{xcolor}
+\usepackage{soulutf8}
+\usepackage{multirow}
+\definecolor{LightGray}{rgb}{0.95,0.95,0.95}
+\newcommand\college{Томский техникум информационных технологий}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.18,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{codepurple},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+	numbers=none,
+	framesep=10pt,
+	xleftmargin=7pt,
+	xrightmargin=7pt,
+	framexleftmargin=7pt,
+	framexrightmargin=7pt
+}
+\lstset{style=mystyle}
+
+\usepackage{enumitem}
+
+\usepackage{listings}
+
+\setlength\parindent{1.25cm}
+\setlength{\footskip}{30pt}
+\usepackage{indentfirst}
+
+%\counterwithin{figure}{chapter}
+%\counterwithin{table}{chapter}
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\normalsize\filcenter}{\thesection}{0.3em}{}
+\titleformat{\subsection}{\normalfont\normalsize}{\thesubsection}{0.3em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize}{\thesubsubsection}{0.3em}{}
+
+\titlespacing*{\section}{0pt}{0pt}{20pt}
+\titlespacing*{\subsection}{1.25cm}{0pt}{20pt}
+\titlespacing*{\subsubsection}{1.25cm}{0pt}{20pt}
+
+\newlist{mylist}{itemize}{1}
+\setlist[mylist]{label=—, leftmargin=1.9, rightmargin=0pt}
+
+\newlist{listNoSpaceAfter}{enumerate}{1}
+\setlist[listNoSpaceAfter]{label=\arabic*), leftmargin=0cm, itemindent=1.9cm, noitemsep, before=\vspace{-16px}, after=\vspace{-20px}}
+
+\setlist[enumerate]{label=\arabic*), leftmargin=0cm, itemindent=1.9cm, noitemsep, before=\vspace{-16px}, after=\vspace{-12px}}
+
+\usepackage{fontspec}
+\setmainfont{pt-astra-serif-regular.ttf}
+
+\usepackage{unicode-math}
+\defaultfontfeatures[pt-astra-serif-regular]
+    { %Path = {/},
+      Extension = .ttf }
+
+\babelfont{tt}{Cousine}
+
+\makeatletter
+\renewcommand*\normalsize{%
+  \@setfontsize\normalsize{14}{21}
+}
+\makeatother
+
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{emdash}{\space\textemdash\space}
+\captionsetup[figure]{name={Рисунок}, labelsep=endash}
+\captionsetup[table]{name={Таблица}, labelsep=endash}
+\captionsetup[listing]{name={Листинг}, labelsep=endash}
+\captionsetup[table]{skip=0pt, singlelinecheck=off}
+
+\usepackage{caption}
+\usepackage[newfloat]{minted}
+\usepackage{ragged2e}
+\captionsetup[lstlisting]{position=top, labelsep=endash, justification=justified, singlelinecheck=off}
+
+\fancyhfoffset[E,O]{0pt}
+
+\setlength{\belowdisplayskip}{0pt} \setlength{\belowdisplayshortskip}{0pt}
+\setlength{\abovedisplayskip}{0pt} \setlength{\abovedisplayshortskip}{0pt}
+
+\newcommand\variant[1]{#1}
+\newcommand\answer[2]{#2}

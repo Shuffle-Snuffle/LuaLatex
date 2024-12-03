@@ -1,0 +1,116 @@
+\documentclass[14pt]{extarticle}
+\input{preamble.sty}
+\input{students.sty}
+\newcommand\Type{Отчёт о лабораторно-практической работе №\,2}
+\newcommand\Topic{Решение уравнений}
+
+\begin{document}
+\input{preamble2.sty}
+\input{frontpage.sty}
+\cfoot{\thepage}
+
+\section{\MakeUppercase{Постановка задачи}}
+
+В ходе выполнения лабораторно-практической работы требуется составить уравнение для решения указанной в~варианте задачи, написать и отладить программу, реализующую указанные методы, и проверить полученный результат.
+
+Вариант №\,16. $x^2 - 34 = 0$. Решить задачу с~помощью методов дихотомии, хорд и грубой силы (перебора).
+
+\newpage
+
+\section{\MakeUppercase{Ход работы}}
+
+Уравнение: $x^2 - 34 = 0$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{1.5em}\subsection{Метод дихотомии}
+
+Добавьте описание метода. Код представлен в листинге \ref{listing:dichotomy}.
+
+\vspace{1.5em}
+\begin{lstlisting}[
+	language=R,
+	caption=Код для метода дихотомии,
+	label=listing:dichotomy,
+        captionpos=tr,
+	]
+dichotomy <- function(f, a, b, epsilon) {
+    repeat {
+        x <- (a + b) / 2
+        y <- f(x)
+        ifelse (f(a) * y < 0, b <- x, a <- x)
+        if (abs(y) <= epsilon) {
+            break
+        }
+    }
+    x
+}
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Метод хорд}
+
+Добавьте описание метода. Код представлен в листинге \ref{listing:chordes}.
+
+\vspace{1.5em}
+\begin{lstlisting}[
+	language=R,
+	caption=Код для метода хорд,
+	label=listing:chordes,
+        captionpos=tr,
+	]
+Your code goes here.
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Метод грубой силы (перебора)}
+
+Добавьте описание метода. Код представлен в листинге \ref{listing:bruteforce}.
+
+\begin{lstlisting}[
+	language=R,
+	caption=Код для метода грубой силы (перебора),
+	label=listing:bruteforce,
+        captionpos=tr,
+	]
+Your code goes here.
+\end{lstlisting}
+
+Выходные данные полученной программы представлены в таблице \ref{tab:results}.
+
+\begin{table}[!h]
+	\sisetup{output-decimal-marker={,}}
+	\centering
+	\caption{Результаты запуска программы}
+	\label{tab:results}
+	\begin{tabular}{|l|S|}
+		\specialrule{.4pt}{2pt}{0pt}
+		Метод                        & Решение   \\
+		\specialrule{.4pt}{0pt}{0pt}
+		Метод грубой силы (перебора) & 1,44      \\
+		Метод хорд                   & 1,4       \\
+		Метод Ньютона (касательных)  & 1,44      \\
+		\specialrule{.8pt}{0pt}{2pt}
+	\end{tabular}
+\end{table}
+
+Из рисунка \ref{fig:plot} видно, что график функции пересекает ось абсцисс примерно там же.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{plot.png}
+	\caption{Графическое решение}
+	\label{fig:plot}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+
+\section{\MakeUppercase{Заключение}}
+
+В ходе выполнения лабораторно-практической работы мы сначала составили уравнение для решения задачи, затем написали и отладили программу, реализующую методы дихотомии, хорд и грубой силы (перебора), и проверили полученный результат.
+
+\end{document}
